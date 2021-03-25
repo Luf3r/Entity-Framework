@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prokerka", "Prokerka.csproj", "{21C80BD4-A26E-4CBE-A2A1-7CE37D53874C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{21C80BD4-A26E-4CBE-A2A1-7CE37D53874C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21C80BD4-A26E-4CBE-A2A1-7CE37D53874C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21C80BD4-A26E-4CBE-A2A1-7CE37D53874C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21C80BD4-A26E-4CBE-A2A1-7CE37D53874C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
