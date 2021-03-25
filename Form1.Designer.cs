@@ -110,7 +110,7 @@
             this.Controls.Add(this.btnRead);
             this.Controls.Add(this.btnAdd);
             this.Name = "Form1";
-            this.Text = "Coffe Data Base";
+            this.Text = "Burger Data Base";
             this.ResumeLayout(false);
             this.PerformLayout();
         }

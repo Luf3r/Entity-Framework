@@ -24,14 +24,12 @@ namespace Prokerka
 
                 await using var dbContext = new BurgerContext();
                 await dbContext.Database.EnsureCreatedAsync();
-                await dbContext.Burgers.AddRangeAsync(new Burger[]
-                {
-                    new Burger() {BurgerName = txtName.Text, BurgerPrice = Convert.ToDouble(txtPrice.Text)}
-                });
+                await dbContext.Burgers.AddRangeAsync(
+                    new Burger() {BurgerName = txtName.Text, BurgerPrice = Convert.ToDouble(txtPrice.Text)});
 
                 await dbContext.SaveChangesAsync();
 
-                MessageBox.Show("Data saved", "INFO", MessageBoxButtons.OK);
+                MessageBox.Show("Data is saved", "INFO", MessageBoxButtons.OK);
             }
             catch (Exception ex)
             {
@@ -41,10 +39,11 @@ namespace Prokerka
         
         private async void btnRead_Click(object sender, EventArgs e)
         {
+            txtBurger.Clear();
             await using var dbContext = new BurgerContext();
-            dbContext.Burgers?.ToList().ForEach(p =>
+            dbContext.Burgers.ToList().ForEach(p =>
             {
-                txtBurger.Text = ($"Name: {p.BurgerName} Price: {p.BurgerPrice:C}");
+                txtBurger.AppendText(Environment.NewLine + $"Name: {p.BurgerName} Price: {p.BurgerPrice:C}");
             });
         }
     }
