@@ -43,7 +43,7 @@ namespace Prokerka
             await using var dbContext = new BurgerContext();
             dbContext.Burgers.ToList().ForEach(p =>
             {
-                txtBurger.AppendText(Environment.NewLine + $"Name: {p.BurgerName} Price: {p.BurgerPrice:C}");
+                txtBurger.AppendText($"Name: {p.BurgerName} Price: {p.BurgerPrice:C}" + Environment.NewLine);
             });
         }
     }
