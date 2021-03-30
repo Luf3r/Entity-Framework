@@ -27,17 +27,20 @@ namespace Prokerka
                 await using var dbContext = new BurgerContext();
                 await dbContext.Database.EnsureCreatedAsync();
 
-                if(txtName.Text != "" && txtPrice.Text != "")
+                try
                 {
-                    await dbContext.Burgers.AddRangeAsync(
-                    new Burger() { BurgerName = txtName.Text, BurgerPrice = Convert.ToDouble(txtPrice.Text) });
-                    await dbContext.SaveChangesAsync();
-                    MessageBox.Show("Data is saved", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (txtName.Text != "" && txtPrice.Text != "")
+                    {
+                        await dbContext.Burgers.AddRangeAsync(
+                        new Burger() { BurgerName = txtName.Text, BurgerPrice = Convert.ToDouble(txtPrice.Text) });
+                        await dbContext.SaveChangesAsync();
+                        MessageBox.Show("Data is saved", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
-
-                else
+                
+                catch(Exception ex)
                 {
-                    MessageBox.Show("Name either Price is empty", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(ex.Message, "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 txtName.Clear();
@@ -46,7 +49,7 @@ namespace Prokerka
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "INFO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
         
