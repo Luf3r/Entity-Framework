@@ -58,7 +58,7 @@ namespace Prokerka
 
             dbContext.Burgers.ToList().ForEach(p =>
             {
-                txtBurger.AppendText($"Burger's Name: {p.BurgerName} Price: {p.BurgerPrice:C}" + Environment.NewLine);
+                txtBurger.AppendText($"Burger's Name: {p.BurgerName}; Price: {p.BurgerPrice:C};" + Environment.NewLine);
             });
         }
     }

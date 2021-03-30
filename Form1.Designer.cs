@@ -40,9 +40,10 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(69, 60);
+            this.btnAdd.Location = new System.Drawing.Point(80, 60);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(177, 20);
+            this.btnAdd.Size = new System.Drawing.Size(206, 32);
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Add product";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -50,9 +51,10 @@
             // 
             // btnRead
             // 
-            this.btnRead.Location = new System.Drawing.Point(69, 86);
+            this.btnRead.Location = new System.Drawing.Point(80, 99);
+            this.btnRead.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnRead.Name = "btnRead";
-            this.btnRead.Size = new System.Drawing.Size(177, 29);
+            this.btnRead.Size = new System.Drawing.Size(206, 33);
             this.btnRead.TabIndex = 1;
             this.btnRead.Text = "Read Data Base";
             this.btnRead.UseVisualStyleBackColor = true;
@@ -60,48 +62,53 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(69, 35);
+            this.txtName.Location = new System.Drawing.Point(80, 31);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(86, 20);
+            this.txtName.Size = new System.Drawing.Size(100, 23);
             this.txtName.TabIndex = 2;
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(160, 35);
+            this.txtPrice.Location = new System.Drawing.Point(186, 31);
+            this.txtPrice.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(86, 20);
+            this.txtPrice.Size = new System.Drawing.Size(100, 23);
             this.txtPrice.TabIndex = 3;
             // 
             // txtBurger
             // 
-            this.txtBurger.Location = new System.Drawing.Point(12, 121);
+            this.txtBurger.Location = new System.Drawing.Point(14, 140);
+            this.txtBurger.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtBurger.Name = "txtBurger";
             this.txtBurger.ReadOnly = true;
-            this.txtBurger.Size = new System.Drawing.Size(296, 150);
+            this.txtBurger.Size = new System.Drawing.Size(345, 172);
             this.txtBurger.TabIndex = 5;
-            this.txtBurger.Text = "";
+            this.txtBurger.Text = "Waiting for data...";
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(69, 9);
+            this.label1.Location = new System.Drawing.Point(80, 10);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 23);
+            this.label1.Size = new System.Drawing.Size(100, 18);
             this.label1.TabIndex = 6;
             this.label1.Text = "Burger name";
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(160, 9);
+            this.label2.Location = new System.Drawing.Point(187, 10);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 23);
+            this.label2.Size = new System.Drawing.Size(100, 18);
             this.label2.TabIndex = 7;
             this.label2.Text = "Burger price";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(322, 284);
+            this.ClientSize = new System.Drawing.Size(376, 328);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBurger);
@@ -109,10 +116,13 @@
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.btnRead);
             this.Controls.Add(this.btnAdd);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Form1";
             this.Text = "Burger Data Base";
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         private System.Windows.Forms.Label label1;
