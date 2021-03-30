@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9NFZW/r4iTFyPEORfT+I1aGX1YBo+h5e6yO2ae4NCmBDYUTa69yMevEDoqwRnggHFJzacJrmSabWh913We6O0g==",
+  "dgSpecHash": "+5wtPozMiCHO8xGiDCoKNfY9YN4oFbqpCL3JOP9wbhPJkhre1wq6vr0sDeBn4Lb3eej1Me1jOC1Do5WqNJwPVQ==",
   "success": true,
-  "projectFilePath": "E:\\Projects\\Rider\\EntityFrameWork\\Prokerka.csproj",
+  "projectFilePath": "E:\\Projects\\Rider\\EntityFramework\\Prokerka.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Monn\\.nuget\\packages\\entityframework\\6.3.0\\entityframework.6.3.0.nupkg.sha512",
     "C:\\Users\\Monn\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

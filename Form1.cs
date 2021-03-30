@@ -20,30 +20,45 @@ namespace Prokerka
                 var dbName = "BurgerDB.db";
 
                 if (File.Exists(dbName))
+                {
                     File.Delete(dbName);
-
+                }
+                    
                 await using var dbContext = new BurgerContext();
                 await dbContext.Database.EnsureCreatedAsync();
-                await dbContext.Burgers.AddRangeAsync(
-                    new Burger() {BurgerName = txtName.Text, BurgerPrice = Convert.ToDouble(txtPrice.Text)});
 
-                await dbContext.SaveChangesAsync();
+                if(txtName.Text != "" && txtPrice.Text != "")
+                {
+                    await dbContext.Burgers.AddRangeAsync(
+                    new Burger() { BurgerName = txtName.Text, BurgerPrice = Convert.ToDouble(txtPrice.Text) });
+                    await dbContext.SaveChangesAsync();
+                    MessageBox.Show("Data is saved", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
 
-                MessageBox.Show("Data is saved", "INFO", MessageBoxButtons.OK);
+                else
+                {
+                    MessageBox.Show("Name either Price is empty", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                txtName.Clear();
+                txtPrice.Clear();
+
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "INFO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         
         private async void btnRead_Click(object sender, EventArgs e)
         {
             txtBurger.Clear();
+
             await using var dbContext = new BurgerContext();
+
             dbContext.Burgers.ToList().ForEach(p =>
             {
-                txtBurger.AppendText($"Name: {p.BurgerName} Price: {p.BurgerPrice:C}" + Environment.NewLine);
+                txtBurger.AppendText($"Burger's Name: {p.BurgerName} Price: {p.BurgerPrice:C}" + Environment.NewLine);
             });
         }
     }

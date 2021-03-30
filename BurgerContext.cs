@@ -20,13 +20,16 @@ namespace Prokerka
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Burger>().ToTable("Burgers", "test");
+            // Creating Table Burgers with schema Prokerka
+            modelBuilder.Entity<Burger>().ToTable("Burgers", "Prokerka");
+            // Makes ID primary key and burger's name unique
             modelBuilder.Entity<Burger>(entity =>
             {
                 entity.HasKey(k => k.BurgerId);
                 entity.HasIndex(i => i.BurgerName).IsUnique();
             });
-            
+
+            //Creates module
             base.OnModelCreating(modelBuilder);
         }
     }

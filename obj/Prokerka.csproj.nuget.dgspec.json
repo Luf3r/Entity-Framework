@@ -1,28 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Projects\\Rider\\EntityFrameWork\\Prokerka.csproj": {}
+    "E:\\Projects\\Rider\\EntityFramework\\Prokerka.csproj": {}
   },
   "projects": {
-    "E:\\Projects\\Rider\\EntityFrameWork\\Prokerka.csproj": {
+    "E:\\Projects\\Rider\\EntityFramework\\Prokerka.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Projects\\Rider\\EntityFrameWork\\Prokerka.csproj",
+        "projectUniqueName": "E:\\Projects\\Rider\\EntityFramework\\Prokerka.csproj",
         "projectName": "Prokerka",
-        "projectPath": "E:\\Projects\\Rider\\EntityFrameWork\\Prokerka.csproj",
+        "projectPath": "E:\\Projects\\Rider\\EntityFramework\\Prokerka.csproj",
         "packagesPath": "C:\\Users\\Monn\\.nuget\\packages\\",
-        "outputPath": "E:\\Projects\\Rider\\EntityFrameWork\\obj\\",
+        "outputPath": "E:\\Projects\\Rider\\EntityFramework\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
           "C:\\Users\\Monn\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net5.0-windows"
+          "net5.0-windows7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
