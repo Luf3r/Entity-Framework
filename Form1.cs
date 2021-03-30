@@ -27,27 +27,29 @@ namespace Prokerka
                 await using var dbContext = new BurgerContext();
                 await dbContext.Database.EnsureCreatedAsync();  
    
-                if (txtName.Text != "" && txtPrice.Text != "")
+                if (!String.IsNullOrEmpty(txtName.Text) && !String.IsNullOrEmpty(txtPrice.Text))
                 {
                     await dbContext.Burgers.AddRangeAsync(
                     new Burger() { BurgerName = txtName.Text, BurgerPrice = Convert.ToDouble(txtPrice.Text) });
                     await dbContext.SaveChangesAsync();
                     MessageBox.Show("Data is saved", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                
-                
+                               
                 else
                 {
                     MessageBox.Show("Something went wrong", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
-                txtName.Clear();
-                txtPrice.Clear();
-
             }
+
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            finally
+            {
+                txtName.Clear();
+                txtPrice.Clear();
             }
         }
         
@@ -57,10 +59,24 @@ namespace Prokerka
 
             await using var dbContext = new BurgerContext();
 
-            dbContext.Burgers.ToList().ForEach(p =>
+            try 
             {
-                txtBurger.AppendText($"Burger's Name: {p.BurgerName}; Price: {p.BurgerPrice:C};" + Environment.NewLine);
-            });
+                dbContext.Burgers.ToList().ForEach(p =>
+                {
+                    txtBurger.AppendText($"Burger's Name: {p.BurgerName}; Price: {p.BurgerPrice:C};" + Environment.NewLine);
+                });
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            finally
+            {
+                txtName.Clear();
+                txtPrice.Clear();
+            }
         }
     }
 }
