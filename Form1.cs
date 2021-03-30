@@ -25,22 +25,20 @@ namespace Prokerka
                 }
                     
                 await using var dbContext = new BurgerContext();
-                await dbContext.Database.EnsureCreatedAsync();
-
-                try
+                await dbContext.Database.EnsureCreatedAsync();  
+   
+                if (txtName.Text != "" && txtPrice.Text != "")
                 {
-                    if (txtName.Text != "" && txtPrice.Text != "")
-                    {
-                        await dbContext.Burgers.AddRangeAsync(
-                        new Burger() { BurgerName = txtName.Text, BurgerPrice = Convert.ToDouble(txtPrice.Text) });
-                        await dbContext.SaveChangesAsync();
-                        MessageBox.Show("Data is saved", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                    await dbContext.Burgers.AddRangeAsync(
+                    new Burger() { BurgerName = txtName.Text, BurgerPrice = Convert.ToDouble(txtPrice.Text) });
+                    await dbContext.SaveChangesAsync();
+                    MessageBox.Show("Data is saved", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 
-                catch(Exception ex)
+                
+                else
                 {
-                    MessageBox.Show(ex.Message, "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Something went wrong", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 txtName.Clear();
