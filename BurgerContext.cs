@@ -10,6 +10,7 @@ namespace Prokerka
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            // Using Reflection, we'll get the name of assembly, that executing our code 
             optionsBuilder.UseSqlite("FileName=BurgerDB", option =>
             {
                 option.MigrationsAssembly(Assembly.GetExecutingAssembly().FullName);
