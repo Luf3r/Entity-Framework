@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -17,20 +16,13 @@ namespace Prokerka
         {
             try
             {
-                var dbName = "BurgerDB.db";
-
-                if (File.Exists(dbName))
-                {
-                    File.Delete(dbName);
-                }
-                    
                 await using var dbContext = new BurgerContext();
                 await dbContext.Database.EnsureCreatedAsync();  
    
                 if (!String.IsNullOrEmpty(txtName.Text) && !String.IsNullOrEmpty(txtPrice.Text))
                 {
                     await dbContext.Burgers.AddRangeAsync(
-                    new Burger() { BurgerName = txtName.Text, BurgerPrice = Convert.ToDouble(txtPrice.Text) });
+                    new Burger() { Name = txtName.Text, Price = Convert.ToDouble(txtPrice.Text) });
                     await dbContext.SaveChangesAsync();
                     MessageBox.Show("Data is saved", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -63,7 +55,7 @@ namespace Prokerka
             {
                 dbContext.Burgers.ToList().ForEach(p =>
                 {
-                    txtBurger.AppendText($"Burger's Name: {p.BurgerName}; Price: {p.BurgerPrice:C};" + Environment.NewLine);
+                    txtBurger.AppendText($"Burger's Name: {p.Name}; Price: {p.Price:C};" + Environment.NewLine);
                 });
             }
 

@@ -26,7 +26,7 @@ namespace Prokerka
             modelBuilder.Entity<Burger>(entity =>
             {
                 entity.HasKey(k => k.BurgerId);
-                entity.HasIndex(i => i.BurgerName).IsUnique();
+                entity.HasIndex(i => i.Name).IsUnique();
             });
 
             //Creates module
